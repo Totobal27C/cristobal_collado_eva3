@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const allowedEmailRegex = /^[^\s@]+@(?:gmail\.com|hotmail\.com|(?:[a-z0-9-]+\.)*empresa(?:\.[a-z]{2,})?)$/i
+const allowedEmailRegex = /^[^\s@]+@(?:gmail\.com|hotmail\.com|inacapmail\.cl|(?:[a-z0-9-]+\.)*empresa(?:\.[a-z]{2,})?)$/i
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/
 
 export default function RegisterPage() {
@@ -30,7 +30,7 @@ export default function RegisterPage() {
     if (!form.age.trim()) nextErrors.age = 'La edad es requerida'
     if (!form.username.trim()) nextErrors.username = 'El nombre de usuario es requerido'
     if (!form.email.trim()) nextErrors.email = 'El correo es requerido'
-    else if (!validateEmail(form.email)) nextErrors.email = 'Correo inválido. Usa uno de estos dominios: @gmail.com, @hotmail.com o @empresa'
+    else if (!validateEmail(form.email)) nextErrors.email = 'Correo inválido. Usa uno de estos dominios: @gmail.com, @hotmail.com, @inacapmail.cl o @empresa'
 
     if (!form.password.trim()) nextErrors.password = 'La contraseña es requerida'
     else {
