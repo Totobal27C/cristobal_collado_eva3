@@ -1,0 +1,450 @@
+:root {
+        --primary: #1E60D6;
+        /* azul metálico */
+        --dark: #071733;
+        /* azul muy oscuro */
+        --muted: #6e8aa6;
+        /* gris azulado */
+        --card: #f4fbff;
+        /* blanco hielo */
+        --bg: #eaf6ff;
+        /* fondo suave azul hielo */
+}
+
+* {
+        box-sizing: border-box
+}
+
+body {
+        margin: 0;
+        font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+        background: var(--bg);
+        color: #111
+}
+
+header {
+        background: linear-gradient(90deg, #082a60 0%, var(--primary) 100%);
+        color: #fff;
+        padding: 1rem
+}
+
+.container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1rem
+}
+
+.brand {
+        display: flex;
+        gap: 1rem;
+        align-items: center
+}
+
+.logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #fff2, #fff0);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        color: #063
+}
+
+nav {
+        margin-top: .6rem
+}
+
+nav a {
+        color: rgba(255, 255, 255, .9);
+        margin-right: 1rem;
+        text-decoration: none;
+        font-weight: 600
+}
+
+main {
+        padding: 1rem .75rem
+}
+
+.hero {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        background: linear-gradient(180deg, #fff, #f8fbfb);
+        padding: 1rem;
+        border-radius: 10px
+}
+
+.team-info {
+        flex: 1
+}
+
+.team-title {
+        font-size: 1.6rem;
+        margin: 0;
+        display: flex;
+        gap: .5rem;
+        align-items: center
+}
+
+.badge {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        border-radius: 6px;
+        padding: .2rem .5rem;
+        font-weight: 700
+}
+
+.meta {
+        color: var(--muted);
+        margin: .4rem 0
+}
+
+.summary {
+        margin-top: .6rem;
+        color: #222
+}
+
+.actions {
+        display: flex;
+        gap: .5rem;
+        margin-top: .8rem
+}
+
+.btn {
+        background: var(--primary);
+        color: #fff;
+        padding: .45rem .7rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 6px 16px rgba(30, 96, 214, 0.12);
+}
+
+section {
+        margin-top: 1rem
+}
+
+.grid {
+        display: grid;
+        gap: .75rem
+}
+
+.grid.cols-3 {
+        grid-template-columns: repeat(3, 1fr)
+}
+
+.card {
+        background: var(--card);
+        padding: .8rem;
+        border-radius: 8px;
+        box-shadow: 0 6px 20px rgba(4, 18, 40, 0.04);
+}
+
+.card form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+}
+
+.card form h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #111;
+}
+
+.card form input,
+.card form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid rgba(30, 96, 214, 0.16);
+        border-radius: 10px;
+        background: #fff;
+        color: #111;
+        font-size: 1rem;
+        box-sizing: border-box;
+}
+
+.card form textarea {
+        min-height: 180px;
+        resize: vertical;
+}
+
+.card form button {
+        border: none;
+        background: var(--primary);
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+}
+
+.card form button:hover {
+        background: #154ec1;
+}
+
+#registroForm p {
+        margin: 0;
+        color: var(--dark);
+}
+
+.players {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        align-items: start;
+}
+
+/* cada jugador como tarjeta estilo "tableta" */
+.player {
+        background: linear-gradient(180deg, #f8fbff, #f1f8ff);
+        border-radius: 12px;
+        padding: .8rem;
+        display: flex;
+        gap: .8rem;
+        align-items: center;
+        box-shadow: 0 6px 18px rgba(14, 34, 70, 0.06);
+        transition: transform .18s ease, box-shadow .18s ease;
+}
+
+
+
+/* Botón para controlar el audio de fondo (aparece si autoplay está bloqueado) */
+.audio-toggle {
+         position: fixed;
+         left: 12px;
+         bottom: 12px;
+         background: var(--primary);
+         color: #fff;
+         border: none;
+         padding: .5rem .6rem;
+         border-radius: 10px;
+         box-shadow: 0 8px 20px rgba(14,34,70,0.12);
+         font-size: 1rem;
+         display: none;
+         z-index: 9999;
+         cursor: pointer;
+}
+
+.player:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(2, 12, 19, 0.09);
+}
+
+.avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, rgba(30, 96, 214, 0.12), rgba(255, 255, 255, 0.6));
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        color: var(--dark);
+        font-size: 1.05rem;
+        flex-shrink: 0;
+        border: 1px solid rgba(30, 96, 214, 0.06);
+}
+
+.player-info {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+}
+
+.player-info .name {
+        font-weight: 800;
+        font-size: 1.02rem;
+        color: #062;
+}
+
+.pos {
+        font-size: .9rem;
+        color: var(--muted);
+}
+
+.player .player-actions {
+        margin-top: .45rem;
+}
+
+.btn.small {
+        padding: .28rem .5rem;
+        font-size: .82rem;
+        border-radius: 8px;
+}
+
+table {
+        width: 100%;
+        border-collapse: collapse
+}
+
+th,
+td {
+        padding: .5rem;
+        text-align: left;
+        border-bottom: 1px solid #eee
+}
+
+.stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: .6rem
+}
+
+.stat {
+        background: linear-gradient(180deg, #fbfeff, #f4fbff);
+        padding: .7rem;
+        border-radius: 8px;
+        text-align: center
+}
+
+footer {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        color: var(--muted);
+        text-align: center
+}
+
+@media(min-width:900px) {
+        .hero {
+                padding: 1.4rem
+        }
+}
+
+.img-kratos {
+        width: 60px;
+        height: 50px;
+        border-radius: 30%;
+
+}
+
+header.header {
+        position: relative;
+}
+
+#user-panel {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.6rem;
+        z-index: 10;
+}
+
+#user-panel #greeting {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+}
+
+#user-panel .panel-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.4rem;
+}
+
+#user-panel .panel-buttons a {
+        display: inline-block;
+        padding: 0.45rem 0.75rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        font-size: 0.85rem;
+}
+
+#user-panel .panel-buttons a:hover {
+        background: rgba(255, 255, 255, 0.2);
+}
+
+.carousel {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+}
+
+.carousel-slides {
+        display: flex;
+        transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+        min-width: 100%;
+        height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        position: relative;
+}
+
+.carousel-slide:nth-child(1) {
+        background: linear-gradient(135deg, #0a3, #3bd);
+}
+
+.carousel-slide:nth-child(2) {
+        background: linear-gradient(135deg, #f60, #f93);
+}
+
+.carousel-slide:nth-child(3) {
+        background: linear-gradient(135deg, #36c, #69f);
+}
+
+.carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.35);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.carousel-button:hover {
+        background: rgba(0, 0, 0, 0.55);
+}
+
+.carousel-button.prev {
+        left: 1rem;
+}
+
+.carousel-button.next {
+        right: 1rem;
+}
+
+.carousel-indicators {
+        position: absolute;
+        bottom: 0.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+}
+
+.carousel-indicators button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+}
+
+.carousel-indicators button.active {
+        background: #fff;
+}
