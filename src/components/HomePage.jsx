@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import estadioMunicipal from '../assets/estadio-municipal.jpg'
 import imagesGallery from '../assets/images.jpg'
 import joseAndrade from '../assets/JOSE-ANDRADE.jpg'
+import AccessibilityButton from './AccessibilityButton'
 
 const players = [
   { slug: 'diego-morales', number: '9', name: 'Diego Morales', role: 'Delantero • Nº 9 • 27 años' },
@@ -52,7 +53,7 @@ export default function HomePage() {
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
-                <h1 style={{ margin: 0, fontSize: '1.1rem' }}>Club Jose Andrade</h1>
+                <h1 style={{ margin: 0, fontSize: '1.4rem', color: '#fff' }}>Club Jose Andrade</h1>
                 <span className="badge">Fundado 15-01-1947</span>
               </div>
               <div style={{ fontSize: '.9rem', color: 'rgba(255,255,255,.9)' }}>
@@ -72,10 +73,11 @@ export default function HomePage() {
 
           <div id="user-panel">
             <span id="greeting">{greeting}</span>
-            <div className="panel-buttons">
+            <div className="panel-buttons" style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
               <Link to="/login">Login</Link>
-              <Link to="/nuevo-usuario">Nuevo Usuario</Link>
-              <Link to="/contacto">Contacto</Link>
+              <Link to="/nuevo-usuario">New User</Link>
+              <Link to="/contacto">Contact</Link>
+              <AccessibilityButton />
             </div>
           </div>
         </div>

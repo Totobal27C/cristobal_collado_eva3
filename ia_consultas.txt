@@ -96,3 +96,65 @@ Ejecuté npm run build y el proyecto sigue compilando correctamente:
 
 ✓ built in 1.01s
 Si quieres, también puedo ajustar el carrusel para que las imágenes se vean con un efecto más “de portada” (más grande, con texto encima o transición suave).
+
+
+* agregame un boton de accecibilidad donde al cliquearlo me aparesca la opcion de achicar o agrandar la letra de la pagina completa y si puedes agregalo en todas las paginas
+Voy a listar los cambios planificados y luego revisar App.jsx y main.jsx para añadir un componente de accesibilidad global.
+
+Created 4 todos
+
+Ahora voy a abrir App.jsx y main.jsx para ver dónde insertar el componente.
+
+Ahora aplicaré los cambios: crearé AccessibilityButton.jsx, añadiré estilos en index.css y actualizaré App.jsx para incluir el componente en todas las páginas. Luego actualizaré el plan.
+
+Edited
+AccessibilityButton.jsx+79-1
+Edited
+App.jsx+2-0
+Read index.css
+
+Edited
+index.css+52-0
+Actualizo el plan para reflejar los archivos añadidos y los pasos completados.
+
+He agregado un botón de accesibilidad para aumentar/disminuir la letra en todas las páginas.
+
+Componente: AccessibilityButton.jsx — botón flotante con panel (disminuir, restablecer, aumentar) que persiste el tamaño en localStorage.
+Integrado en: App.jsx — importado y renderizado globalmente.
+Estilos: index.css — estilos para el botón y el panel.
+Probar en local:
+
+Está arriba a la derecha ; clic abre las opciones. ¿Quieres que además añada control de contraste o un selector de tamaños predefinidos?
+
+
+* ahora quiero que agreges una opcion de claro a oscuro que cambie la pagina al color seleccionado , cuando se aprete el boton de accesibilidad esta opcion tiene que saparecer abajo de ella
+Voy a modificar AccessibilityButton.jsx para añadir el selector claro/oscuro y actualizar index.css con variables para el tema oscuro y estilos del selector. Luego actualizaré la tarea en el TODO.
+
+Edited
+AccessibilityButton.jsx+49-3
+Edited
+index.css+49-0
+Created 8 todos
+
+He agregado el selector Claro/Oscuro dentro del panel de accesibilidad y estilos para que el sitio cambie al tema seleccionado.
+
+Archivos actualizados:
+AccessibilityButton.jsx: añade persistencia del tema y botones "Claro" / "Oscuro" dentro del panel.
+index.css: añade soporte para data-theme="dark" / data-theme="light" y estilos para los botones de tema.
+Prueba rápida:
+
+¿Quieres que el tema por defecto sea 'auto' (seguir sistema) en vez de forzar 'light' al inicio?
+
+* me referia al fondo tambien tiene que poner el fondo en negro y parece que los colores cuando pongo oscuro se cambian a claro
+
+Voy a aplicar reglas CSS más específicas para el tema oscuro: forzar fondo negro y ajustar colores de header, tarjetas y botones para que no aparezcan claros. Esto evita que estilos anteriores los sobreescriban.
+
+Edited
+index.css+34-0
+Created 9 todos
+
+Listo: añadí reglas más específicas para el tema oscuro que fuerzan fondo negro y ajustan colores de header, tarjetas y botones para que no aparezcan claros.
+
+Prueba:
+
+Si todavía ves texto oscuro en algún bloque (por ejemplo por estilos inline como color: '#333'), dímelo y los cambiaré a variables (o agregaré una regla específica para esos selectores). ¿Quieres que el toggle tenga una opción Auto que siga el sistema?

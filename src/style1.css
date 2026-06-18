@@ -326,7 +326,8 @@ header.header {
 #user-panel {
         position: absolute;
         top: 1rem;
-        right: 1rem;
+        /* dejar espacio a la derecha para el botón de accesibilidad */
+        right: 110px;
         text-align: right;
         display: flex;
         flex-direction: column;
@@ -343,9 +344,10 @@ header.header {
 
 #user-panel .panel-buttons {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: flex-end;
-        gap: 0.4rem;
+        gap: 0.6rem;
+        align-items: center;
 }
 
 #user-panel .panel-buttons a {
