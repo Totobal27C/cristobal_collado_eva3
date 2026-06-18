@@ -186,8 +186,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <footer>
-          <div className="pos">© Club Espartano · Todos los derechos reservados · contacto@espartano.fc</div>
+        <footer className="site-footer" style={{ marginTop: '2rem', padding: '1rem 0', textAlign: 'center', fontSize: '.9rem', color: 'rgba(0,0,0,.75)' }}>
+          <div className="container footer-content">
+            <div>Cristobal Collado</div>
+            <div>Profesor: Victor Armando Vásquez</div>
+            <div>Asignatura: Programacion Front End</div>
+            <div>Seccion: TI3031/D-IEI-N3-P2-C1(F)/D</div>
+          </div>
         </footer>
       </main>
     </>
